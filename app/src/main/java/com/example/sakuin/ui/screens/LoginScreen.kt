@@ -20,6 +20,7 @@ import com.example.sakuin.ui.components.*
 import com.example.sakuin.ui.theme.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 
+
 @Composable
 fun LoginScreen(
     onRegisterClick: () -> Unit
@@ -35,7 +36,7 @@ fun LoginScreen(
             .padding(horizontal = 28.dp, vertical = 32.dp)
     ) {
 
-        SakuinLogo()
+        SakuinLogo2()
 
         Spacer(modifier = Modifier.height(35.dp))
 

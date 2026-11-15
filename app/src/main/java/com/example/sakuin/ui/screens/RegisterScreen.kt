@@ -39,20 +39,34 @@ fun RegisterScreen(
             .padding(horizontal = 28.dp, vertical = 24.dp)
     ) {
 
-        IconButton(
-            onClick = onBackClick,
-            modifier = Modifier.size(40.dp)
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                imageVector = Icons.Outlined.ArrowBack,
-                contentDescription = "Kembali",
-                tint = DarkText
+            IconButton(
+                onClick = onBackClick,
+                modifier = Modifier.size(40.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Outlined.ArrowBack,
+                    contentDescription = "Kembali",
+                    tint = DarkText
+                )
+            }
+
+            Spacer(modifier = Modifier.width(8.dp))
+
+            Text(
+                text = "Buat Akun",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = DarkText
             )
         }
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        SakuinLogo()
+        SakuinLogo2()
 
         Spacer(modifier = Modifier.height(25.dp))
 
