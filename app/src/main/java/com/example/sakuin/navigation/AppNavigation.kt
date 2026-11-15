@@ -33,6 +33,13 @@ fun AppNavigation() {
             LoginScreen(
                 onRegisterClick = {
                     navController.navigate("register")
+                },
+                onLoginSuccess = {
+                    navController.navigate("profile") {
+                        popUpTo("login") {
+                            inclusive = true
+                        }
+                    }
                 }
             )
         }
@@ -43,6 +50,62 @@ fun AppNavigation() {
                     navController.popBackStack()
                 },
                 onBackClick = {
+                    navController.popBackStack()
+                },
+                onRegisterSuccess = {
+                    navController.navigate("profile") {
+                        popUpTo("register") {
+                            inclusive = true
+                        }
+                    }
+                }
+            )
+        }
+
+        composable("profile") {
+            ProfileScreen(
+                onHomeClick = {
+                    // Sementara dikosongkan
+                },
+                onLogoutClick = {
+                    navController.navigate("login") {
+                        popUpTo("profile") {
+                            inclusive = true
+                        }
+                    }
+                },
+                onBackupClick = {
+                    navController.navigate("backup")
+                },
+                onRestoreClick = {
+                    navController.navigate("restore")
+                }
+            )
+        }
+
+        composable("backup") {
+            BackupScreen(
+                onBackClick = {
+                    navController.popBackStack()
+                },
+                onHomeClick = {
+                    // Sementara dikosongkan
+                },
+                onProfileClick = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        composable("restore") {
+            RestoreScreen(
+                onBackClick = {
+                    navController.popBackStack()
+                },
+                onHomeClick = {
+                    // Sementara dikosongkan
+                },
+                onProfileClick = {
                     navController.popBackStack()
                 }
             )

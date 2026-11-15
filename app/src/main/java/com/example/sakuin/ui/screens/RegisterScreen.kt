@@ -24,7 +24,8 @@ import com.example.sakuin.ui.theme.*
 @Composable
 fun RegisterScreen(
     onLoginClick: () -> Unit,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    onRegisterSuccess: () -> Unit
 ) {
     var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -169,7 +170,7 @@ fun RegisterScreen(
 
         Button(
             onClick = {
-                // TODO: Implementasi registrasi
+                onRegisterSuccess()
             },
             modifier = Modifier
                 .fillMaxWidth()

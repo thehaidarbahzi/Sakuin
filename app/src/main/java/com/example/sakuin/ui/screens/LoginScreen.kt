@@ -23,7 +23,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 
 @Composable
 fun LoginScreen(
-    onRegisterClick: () -> Unit
+    onRegisterClick: () -> Unit,
+    onLoginSuccess: () -> Unit
 ) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -97,7 +98,7 @@ fun LoginScreen(
 
         Button(
             onClick = {
-                // TODO: Implementasi login
+                onLoginSuccess()
             },
             modifier = Modifier
                 .fillMaxWidth()
